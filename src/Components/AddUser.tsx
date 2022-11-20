@@ -7,6 +7,7 @@ import {useNavigate } from "react-router-dom"
 //import {useHistory} from 'react-router-dom'
 
 import {useForm} from 'react-hook-form'
+import { stringify } from "querystring";
 
 
 const AddUser: React.FC = () => {
@@ -22,7 +23,7 @@ const AddUser: React.FC = () => {
 
   const onSubmit = handleSubmit(async (values) => {
     //e.preventDefault();
-
+    alert(JSON.stringify(values));
     const res = await userService.createUser(values);
     console.log(res);
     navigate('/');
